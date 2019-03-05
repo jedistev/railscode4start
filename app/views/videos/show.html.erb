@@ -1,0 +1,24 @@
+<p id="notice">
+  <%= notice %>
+</p>
+
+<div class="card">
+  <div class="card-content">
+    <p>
+      <strong>Wista:</strong>
+      <%= @video.wista %>
+    </p>
+    <p>
+      <strong>Title:</strong>
+      <%= @video.title %>
+    </p>
+    <p>
+      <strong>Description:</strong>
+      <%= @video.description %>
+    </p>
+
+
+    <a href="<%= edit_video_path(@video) %>" class="waves-effect waves-light btn" name="action">Edit</a>
+    <a href="<%= videos_path %>" class="waves-effect waves-light btn" name="action">Back</a>
+  </div>
+</div>

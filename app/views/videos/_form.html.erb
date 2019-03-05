@@ -1,0 +1,39 @@
+<%= form_with(model: video, local: true) do |form| %>
+<% if video.errors.any? %>
+<div id="error_explanation">
+  <h2>
+    <%= pluralize(video.errors.count, "error") %> prohibited this video from being saved:</h2>
+
+  <ul>
+    <% video.errors.full_messages.each do |message| %>
+    <li>
+      <%= message %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="input-field">
+  <%= form.text_field :wistia, maxlength: "20", class: "validate", id: "wistia", :placeholder => 'Video', data: { length: "20" } %>
+</div>
+
+<div class="input-field">
+  <%= form.text_field :title, maxlength: "40", class: "validate", id: "title", :placeholder => 'Title', data: { length: "40" } %>
+</div>
+
+<div class="input-field">
+ <%= form.text_area :description, maxlength: "800", class: "validate", id: "description", :placeholder => 'Description', data: { length: "800" } , :class => 'materialize-textarea' %>
+  
+</div>
+<button class="waves-effect waves-light btn" type="submit" name="action">Submit</button>
+<a href="<%= videos_path %>" class="waves-effect waves-light btn" name="action">Back</a>
+<!--<div class="actions">
+  <%= form.submit %>
+</div>-->
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('input#wistia, input#title, textarea#description').characterCounter();
+  });
+</script>
+<% end %>
