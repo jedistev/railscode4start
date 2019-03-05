@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wista: MyString
+  description: MyText
+
+two:
+  wista: MyString
+  description: MyText
